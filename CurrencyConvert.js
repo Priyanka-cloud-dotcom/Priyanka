@@ -1,7 +1,7 @@
 import { LightningElement, track} from 'lwc';
 
 // importing apex class to make callout
-import getCurrencyData from '@salesforce/apex/CurrencyConversionController.retriveCurrencyConversionRates';
+import getCurrencyData from '@salesforce/apex/CurrencyConversionController.getCurrencyRates';
 
 // Currency options
 const options = [
