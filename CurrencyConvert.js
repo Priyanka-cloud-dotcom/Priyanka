@@ -11,7 +11,7 @@ const options = [
                 { label: 'GBP', value: 'GBP' },
                 { label: 'INR', value: 'INR' }];
 
-export default class HTTPCalloutInLWC extends LightningElement {
+export default class CurrencyConvert extends LightningElement {
     @track fromCurrencyValue;
     @track toCurrencyValue;
     @track options = options;
@@ -35,7 +35,7 @@ export default class HTTPCalloutInLWC extends LightningElement {
                                 + this.fromCurrencyValue + '&to_currency=' + this.toCurrencyValue + '&apikey=I9NR1FF0ULJPILAZ';
         
         // calling apex class method to make callout
-        getCurrencyData({strEndPointURL : endpointURL})
+        getCurrencyData({alphaEndPointURL : endpointURL})
         .then(data => {
         
             let objData = {
