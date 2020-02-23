@@ -1,12 +1,12 @@
-public without sharing class CurrencyConversionController {
+public inherited sharing class CurrencyConversionController {
 
     @AuraEnabled
     public static map<String, Object> getCurrencyRates(String alphaEndPointURL){
         map<String, Object> newJsonData = new map<String, Object>();
-        String strResponse = null;
+        String alphaResponse = null;
         if(String.isNotBlank(alphaEndPointURL)) {
             HttpRequest httpRequest = new HttpRequest();  
-            httpRequest.setEndpoint(strEndPointURL);
+            httpRequest.setEndpoint(alphaEndPointURL);
 
             httpRequest.setMethod('GET');   
             httpRequest.setHeader('Authorization', 'OAuth ' + UserInfo.getSessionId());        
@@ -22,7 +22,7 @@ public without sharing class CurrencyConversionController {
                 }
 
                 if (httpResponse.getStatusCode() == 200 ) {  
-                    strResponse = httpResponse.getBody();  
+                    alphaResponse = httpResponse.getBody();  
                 } 
                 else {  
                     throw new CalloutException(httpResponse.getBody());  
@@ -33,12 +33,12 @@ public without sharing class CurrencyConversionController {
             }  
         } 
 
-        if(!String.isBlank(strResponse)) {
-            mapJsonData = (map<String, Object>)JSON.deserializeUntyped(strResponse);
+        if(!String.isBlank(alphaResponse)) {
+            newJsonData = (map<String, Object>)JSON.deserializeUntyped(alphaResponse);
             System.debug('newJsonData ===> '+newJsonData);
         }
 
-        if(!mapJsonData.isEmpty()) {
+        if(!newJsonData.isEmpty()) {
             return newJsonData;
         }
         else {
