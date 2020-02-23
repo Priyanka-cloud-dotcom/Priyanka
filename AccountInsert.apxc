@@ -1,0 +1,17 @@
+public class AccountInsert {
+
+    public AccountInsert(){}
+    
+    public static void getrecords()
+    {
+        List<Account> accList = new List<Account>();  
+        for(Integer i=0; i<1000; i++)
+        {
+            Account acc1 = new Account();
+            acc1.Name = 'TestAccount'+i;
+            accList.add(acc1);
+        }
+        insert accList;
+        System.debug('Number of Accounts Inserted:' +accList.size());
+    }
+}
