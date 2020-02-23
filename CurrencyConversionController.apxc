@@ -1,10 +1,10 @@
 public without sharing class CurrencyConversionController {
 
     @AuraEnabled
-    public static map<String, Object> getCurrencyRates(String strEndPointURL){
-        map<String, Object> mapJsonData = new map<String, Object>();
+    public static map<String, Object> getCurrencyRates(String alphaEndPointURL){
+        map<String, Object> newJsonData = new map<String, Object>();
         String strResponse = null;
-        if(String.isNotBlank(strEndPointURL)) {
+        if(String.isNotBlank(alphaEndPointURL)) {
             HttpRequest httpRequest = new HttpRequest();  
             httpRequest.setEndpoint(strEndPointURL);
 
@@ -35,11 +35,11 @@ public without sharing class CurrencyConversionController {
 
         if(!String.isBlank(strResponse)) {
             mapJsonData = (map<String, Object>)JSON.deserializeUntyped(strResponse);
-            System.debug('mapJsonData ===> '+mapJsonData);
+            System.debug('newJsonData ===> '+newJsonData);
         }
 
         if(!mapJsonData.isEmpty()) {
-            return mapJsonData;
+            return newJsonData;
         }
         else {
             return null;
