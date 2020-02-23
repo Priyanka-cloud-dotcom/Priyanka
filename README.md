@@ -12,5 +12,5 @@ Assignment #2 : Online Currency Converter to display realtime exchange rates
 CurrencyConversionController.apxc ,
 CurrencyConvert.js  ,
 CurrencyConvert.html  ,
-CurrencyConvert.js-meta.xml
-Output.pdf
+CurrencyConvert.js-meta.xml ,
+CurrencyConvert Output.pdf
