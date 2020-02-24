@@ -24,6 +24,6 @@ CurrencyConvert.html  ,
 CurrencyConvert.js-meta.xml ,
 CurrencyConvert Output.pdf
 
-CurrencyConvert.js                : Endpoint URL is set by passing the apikey. Making callout to the apex class method to get the currency data by passing the Endpoint URL. Upon retrieving the JSON response data, adding to data object to display in UI. Events are handled to set the currency attributes while the user selects the options on the UI
+CurrencyConvert.js                : Events are handled to set the currency attributes while the user selects the options on the UI.Endpoint URL is set by passing the apikey. Making callout to the apex class method to get the currency data by passing the Endpoint URL. Upon retrieving the JSON response data, adding to data object to display in UI. 
 
 CurrencyConversionController.apxc : Upon receiving the Endpoint URL from js controller, Apex controller make http callouts to get the response
